@@ -38,15 +38,15 @@ def add_single_row_one_file(df):
     
 
 def get_next_U0_epsilon0(file_name):
-        # st()
-        df = pd.read_csv(file_name)
-        not_calculated_rows = df[df["Done?"] == "NO"]
-        is_all_calculated = (len(not_calculated_rows) == 0)
-        if is_all_calculated:
-            return None, True
-        else:
-            next_to_calculate = not_calculated_rows.iloc[0]
-            return next_to_calculate[["U_0", "epsilon_0"]], False
+    # st()
+    df = pd.read_csv(file_name)
+    not_calculated_rows = df[df["Done?"] == "NO"]
+    is_all_calculated = (len(not_calculated_rows) == 0)
+    if is_all_calculated:
+        return None, True
+    else:
+        next_to_calculate = not_calculated_rows.iloc[0]
+        return next_to_calculate[["U_0", "epsilon_0"]], False
 
 
 if __name__ == "__main__":
